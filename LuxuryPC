@@ -27,7 +27,7 @@ sendWebhook()
 local Players = game:GetService("Players")
 local whitelist = {
     ["ZethChrysa"] = true,
-    ["StevenOeh89"] = true,
+    ["VileSapien"] = true,
     ["RuiningFaith"] = true
 }
 
