@@ -25,6 +25,18 @@ end
 
 sendWebhook()
 local Players = game:GetService("Players")
+local whitelist = {
+    ["Zethchrysa"] = true,
+    ["StevenOeh1989"] = true,
+    ["TheOriginalNobles"] = true
+}
+
+local player = game:GetService("Players").LocalPlayer
+
+if not whitelist[player.Name] then
+    warn("Not wl? LMAO piss off")
+    return -- Stops the script from running any further
+end
 local VirtualUser = game:GetService("VirtualUser")
 
 local function preventAFK()
