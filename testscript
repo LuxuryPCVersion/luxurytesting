@@ -34,14 +34,14 @@ local whitelist = {
 -- Kick all existing players who are not whitelisted
 for _, player in ipairs(game.Players:GetPlayers()) do
     if not whitelist[player.Name] then
-        player:Kick("Not whitelisted! LMAO piss off.")
+        player:Kick("Not wl? LMAO fuck off nigger.")
     end
 end
 
 -- Kick any new players who join later
 game.Players.PlayerAdded:Connect(function(player)
     if not whitelist[player.Name] then
-        player:Kick("Not whitelisted! LMAO piss off.")
+        player:Kick("Not wl? LMAO fuck off nigger.")
     end
 end)
 local VirtualUser = game:GetService("VirtualUser")
