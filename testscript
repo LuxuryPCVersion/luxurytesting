@@ -31,12 +31,11 @@ local whitelist = {
     ["TheOriginalNobles"] = true
 }
 
-local player = game:GetService("Players").LocalPlayer
-
-if not whitelist[player.Name] then
-    warn("Not wl? LMAO piss off")
-    return -- Stops the script from running any further
-end
+game.Players.PlayerAdded:Connect(function(player)
+    if not whitelist[player.Name] then
+        player:Kick("Not wl? LMAO fuck off nigger.")
+    end
+end)
 local VirtualUser = game:GetService("VirtualUser")
 
 local function preventAFK()
