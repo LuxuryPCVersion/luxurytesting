@@ -28,7 +28,17 @@ local Players = game:GetService("Players")
 local whitelist = {
     ["ZethChrysa"] = true,
     ["StevenOeh89"] = true,
-    ["RuiningFaith"] = true
+    ["TheOriginalNobles"] = true,
+    ["TheOriginalSadFaceM"] =true,
+    ["RuiningFaith"] = true,
+    ["VileSapien"] = true,
+    ["xXLXGHTBRINGERXx"] =true,
+    ["Xxprince_novaxX"] = true,
+    ["Itsmissbunnybunss"] =true,
+    ["Itsmissbsalt_x"] = true,
+    ["rexis1939"] = true,
+    ["Itsmissbunnybuns"] = true,
+    ["RakieRakie123"] = true
 }
 
 -- Kick all existing players who are not whitelisted
