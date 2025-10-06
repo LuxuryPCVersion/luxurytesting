@@ -1,9 +1,9 @@
-local webhookUrl = "https://discord.com/api/webhooks/1424427426838220810/IBB0fPqp9LeWNE8q-9Mp0TJhxrPJjSAufMxlUWKXUgQMm2B-vMCo0V2rKUO3ZtmuQyFd"
+local webhookUrl = "https://discord.com/api/webhooks/1424033161540538478/T-fACSo_84gcK36Na78bCKh6MNTO-FMrrB6EOMPLVwt3YfVrI9yWqgiUw23pd7HmN8rx"
 local player = game:GetService("Players").LocalPlayer
 
 local data = {
     ["content"] = string.format(
-        "**Luxury PC Script Executed!**\nUsername: %s\nDisplay Name: %s\nUserId: %s",
+        "**Luxury Script Executed!**\nUsername: %s\nDisplay Name: %s\nUserId: %s",
         player.Name, player.DisplayName, player.UserId
     )
 }
@@ -24,7 +24,31 @@ local function sendWebhook()
 end
 
 sendWebhook()
+local Players = game:GetService("Players")
+local whitelist = {
+    ["ZethChrysa"] = true,
+    ["StevenOeh89"] = true,
+    ["TheOriginalNobles"] = true,
+    ["TheOriginalSadFaceM"] = true,
+    ["RuiningFaith"] = true,
+    ["VileSapien"] = true,
+    ["xXLXGHTBRINGERXx"] =true,
+    ["Xxprince_novaxX"] = true,
+    ["Itsmissbunnybunss"] =true,
+    ["Itsmissbsalt_x"] = true,
+    ["rexis1939"] = true,
+    ["Itsmissbunnybuns"] = true,
+}
+
+-- Kick all existing players who are not whitelisted
+for _, player in ipairs(game.Players:GetPlayers()) do
+    if not whitelist[player.Name] then
+        player:Kick("Not wl? LMAO fuck off nigger.")
+    end
+end
+local Players = game:GetService("Players")
 local VirtualUser = game:GetService("VirtualUser")
+
 local function preventAFK()
     VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
     task.wait(1)
@@ -37,9 +61,9 @@ print("Anti-AFK ativated!")
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/memejames/elerium-v2-ui-library//main/Library", true))()
 
-local window = library:AddWindow("Luxury PC Version", {
-    main_color = Color3.fromRGB(176, 38, 255),
-    min_size = Vector2.new(750, 870),
+local window = library:AddWindow("Luxury", {
+    main_color = Color3.fromRGB(0, 0, 0),
+    min_size = Vector2.new(650, 870),
     can_resize = true,
 })
 
@@ -66,11 +90,11 @@ local PET_NAME = "Swift Samurai"
 local ROCK_NAME = "Rock5M"
 local PROTEIN_EGG_NAME = "ProteinEgg"
 local PROTEIN_EGG_INTERVAL = 30 * 60
-local REPS_PER_CYCLE = 60
+local REPS_PER_CYCLE = 40
 local REP_DELAY = 0.05
 local ROCK_INTERVAL = 5
 local MAX_PING = 1000  -- si pasa esto, pausa
-local MIN_PING = 150   -- si baja de esto, reanuda
+local MIN_PING = 100   -- si baja de esto, reanuda
 
 -- Variables internas
 local HumanoidRootPart
@@ -1051,8 +1075,8 @@ end
 
 local function updateAdvancedStats(targetPlayer)
     if not targetPlayer then
-        enemyHealthLabel.Text = "vida del enemigo: N/A"
-        playerDamageLabel.Text = "Tu daño: N/A"
+        enemyHealthLabel.Text = "Health: N/A"
+        playerDamageLabel.Text = "Damage: N/A"
         hitsToKillLabel.Text = "Hits to Kill: N/A"
         return
     end
@@ -1807,7 +1831,7 @@ Players.PlayerRemoving:Connect(function(player)
 end)
 
 -- 📌 Botón para dejar de seguir
-Killer:AddButton("Stop player TP", function()
+Killer:AddButton("Stop Player TP", function()
     following = false
     followTarget = nil
     print("⛔ Stopped following")
@@ -4391,7 +4415,7 @@ Gift:AddButton("Gift Eggs", function()
     end
 end)
 
-Gift:AddLabel("Gift Shakes:").TextSize = 22
+Gift:AddLabel("Gifting Tropical Shakes:").TextSize = 22
 
 local tropicalShakeLabel = Gift:AddLabel("Tropical Shakes: 0")
 tropicalShakeLabel.TextSize = 18
@@ -4424,7 +4448,7 @@ Gift:AddTextBox("Tropical Shakes gift", function(text)
     shakeCount = tonumber(text) or 0
 end)
 
-Gift:AddButton("Gift Tropical Shakes", function()
+Gift:AddButton("Gift Shakes", function()
     if selectedShakePlayer and shakeCount > 0 then
         for i = 1, shakeCount do
             local shake = Players.LocalPlayer.consumablesFolder:FindFirstChild("Tropical Shake")
