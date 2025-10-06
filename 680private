@@ -27,7 +27,7 @@ sendWebhook()
 local Players = game:GetService("Players")
 local whitelist = {
     ["ZethChrysa"] = true,
-    ["VileSapien"] = true,
+    ["RakieRakie123"] = true,
     ["StevenOeh89"] = true
 }
 
@@ -51,7 +51,7 @@ print("Anti-AFK ativated!")
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/memejames/elerium-v2-ui-library//main/Library", true))()
 
-local window = library:AddWindow("Luxury PC Version", {
+local window = library:AddWindow("680s Private Script", {
     main_color = Color3.fromRGB(176, 38, 255),
     min_size = Vector2.new(750, 870),
     can_resize = true,
