@@ -26,7 +26,7 @@ end
 sendWebhook()
 local Players = game:GetService("Players")
 local whitelisted_HWIDs = {
-    ["b3bdf5d109ea03434422bbe5185740682cff4a5f3c975137e58a65b30dd142c9"] = true,
+    [""] = true,
 }
 
 local hwid
@@ -37,8 +37,8 @@ end)
 if hwid and whitelisted_HWIDs[hwid] then
     -- Show a special notification to the whitelisted user
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Private Access",
-        Text = "Welcome, 680 private user!",
+        Title = "Premium Access",
+        Text = "Welcome, luxury user!",
         Duration = 5
     })
 else
