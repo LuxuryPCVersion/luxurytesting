@@ -25,26 +25,25 @@ end
 
 sendWebhook()
 local Players = game:GetService("Players")
-local whitelist = {
-    ["ZethChrysa"] = true,
-    ["StevenOeh89"] = true,
-    ["TheOriginalNobles"] = true,
-    ["TheOriginalSadFaceM"] = true,
-    ["RuiningFaith"] = true,
-    ["VileSapien"] = true,
-    ["xXLXGHTBRINGERXx"] =true,
-    ["Xxprince_novaxX"] = true,
-    ["Itsmissbunnybunss"] =true,
-    ["Itsmissbsalt_x"] = true,
-    ["rexis1939"] = true,
-    ["Itsmissbunnybuns"] = true,
+local whitelisted_HWIDs = {
+    ["b3bdf5d109ea03434422bbe5185740682cff4a5f3c975137e58a65b30dd142c9"] = true,
 }
 
--- Kick all existing players who are not whitelisted
-for _, player in ipairs(game.Players:GetPlayers()) do
-    if not whitelist[player.Name] then
-        player:Kick("Not wl? LMAO fuck off nigger.")
-    end
+local hwid
+pcall(function()
+    hwid = gethwid() -- If your executor uses a different function, change this!
+end)
+
+if hwid and whitelisted_HWIDs[hwid] then
+    -- Show a special notification to the whitelisted user
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Private Access",
+        Text = "Welcome, 680 private user!",
+        Duration = 5
+    })
+else
+    -- Optionally halt execution for non-whitelisted users
+    while true do end
 end
 local Players = game:GetService("Players")
 local VirtualUser = game:GetService("VirtualUser")
