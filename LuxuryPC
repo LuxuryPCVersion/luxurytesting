@@ -26,7 +26,7 @@ end
 sendWebhook()
 local Players = game:GetService("Players")
 local whitelisted_HWIDs = {
-    [""] = true,
+    ["620a359fdf83da9fe755e76a58caaeeaacc20db1deefce6e2b5d8b3261d0efb1"] = true,
 }
 
 local hwid
